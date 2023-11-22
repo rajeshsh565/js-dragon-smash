@@ -57,11 +57,11 @@ let scoreNdifficulty = () => {
     "paused"
   ) {
     scoreCount += 1;
-    if (dragonInterval > 800) {
+    if (dragonInterval > 1500) {
       dragon.classList.remove("animateDragon");
       dragon.style.setProperty(
         "--dragon-duration",
-        dragonInterval - 600 + "ms"
+        dragonInterval - 500 + "ms"
       );
       dragonInterval = parseInt(
         window.getComputedStyle(dragon).getPropertyValue("--dragon-duration")
@@ -89,7 +89,7 @@ const dinoVSdragon = () => {
     dragonY = parseInt(window.getComputedStyle(dragon).getPropertyValue("top"));
     dinoX = parseInt(window.getComputedStyle(dino).getPropertyValue("left"));
     dinoY = parseInt(window.getComputedStyle(dino).getPropertyValue("top"));
-    if(dragonX<210 && dragonX >75 && dinoY>-100){
+    if(dragonX<210 && dragonX >-50 && dinoY>-100){
       dragon.style.animationPlayState = "paused";
       dino.style.animationPlayState = "paused";
       gameOver();
