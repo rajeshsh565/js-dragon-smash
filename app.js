@@ -1,3 +1,6 @@
+const gameMusic = new Audio("./content/music.mp3");
+const gameOverMusic = new Audio("./content/gameover.wav");
+
 const btn = document.querySelector(".btn");
 const dino = document.querySelector(".dino");
 const dragon = document.querySelector(".dragon");
@@ -21,6 +24,10 @@ const timer = (n) => {
 };
 
 window.addEventListener("DOMContentLoaded", ()=>{
+  gameMusic.play();
+  setInterval(()=>{
+       gameMusic.play();
+     },162000);
      startHere();
 })
 
@@ -99,6 +106,8 @@ const dinoVSdragon = () => {
 };
 
 const gameOver = () =>{
+     gameMusic.pause();
+     gameOverMusic.play();
      messageText.style.display = "block";
      // btn.style.display = "block";
      btn.style.visibility="visible";
