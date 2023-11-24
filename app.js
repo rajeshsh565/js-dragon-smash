@@ -24,10 +24,9 @@ const timer = (n) => {
 };
 
 window.addEventListener("DOMContentLoaded", ()=>{
-  gameMusic.play();
-  setInterval(()=>{
-       gameMusic.play();
-     },162000);
+	musicInterval = setInterval(()=>{
+		gameMusic.play();
+	},10)
      startHere();
 })
 
@@ -106,7 +105,8 @@ const dinoVSdragon = () => {
 };
 
 const gameOver = () =>{
-     gameMusic.pause();
+	 clearInterval(musicInterval);
+	 gameMusic.pause();
      gameOverMusic.play();
      messageText.style.display = "block";
      // btn.style.display = "block";
